@@ -131,16 +131,18 @@ export default function Home() {
               transition={{ delay: index * 0.1 }}
               className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-green-500/30 border border-gray-700"
             >
-              <div className="relative h-48 bg-white">
-                <Image
-                  src={site.image}
-                  alt={`${site.name} Logo`}
-                  fill
-                  priority
-                  className="object-contain p-4"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+              // Aynı kodun başlangıcı...
+
+<div className="relative h-48 bg-white">
+  <img
+    src={site.image}
+    alt={`${site.name} Logo`}
+    className="w-full h-full object-contain p-4"
+  />
+</div>
+
+// Kodun geri kalanı aynı...
+
               
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-green-400 neon-text mb-3">{site.name}</h3>
