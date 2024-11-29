@@ -6,8 +6,8 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'BONUS KRALI',
-  description: 'Deneme Bonusu',
+  title: 'BONUS KRALI 🔱',
+  description: 'DENEME BONUSU VE FREESPİNLER',
 }
 
 export default function RootLayout({
