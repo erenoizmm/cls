@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-const bonusSites = [
+export const bonusSites = [
   {
     name: "VİPSLOT",
     bonus: "999 Adet Freespin",
