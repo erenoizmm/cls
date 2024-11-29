@@ -4,15 +4,21 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-export const bonusSites = [
+const bonusSites = [
   {
     name: "VİPSLOT",
-    bonus: "999 Adet Freespin",
+    bonus: "30₺ Deneme Bonusu",
     description: "Üyelik sonrası anında",
     image: "https://r.resimlink.com/R-wcfhWlGI.jpg",
     link: "https://m.vipslot300.com/tr/"
   },
-    
+  {
+    name: "BETİST",
+    bonus: "50₺ Deneme Bonusu", 
+    description: "SMS onayı sonrası",
+    image: "https://r.resimlink.com/3r-5F.png",
+    link: "https://betist1345.com/Register-1345"
+  },
   {
     name: "ROYALBET",
     bonus: "25₺ Free Bonus",
@@ -28,42 +34,42 @@ export const bonusSites = [
     link: "https://m.betbox2314.com/?btag=788067"
   },
   {
-    name: "Grandpasha",
+    name: "GRANDPASHA",
     bonus: "60₺ Hoşgeldin Bonusu",
     description: "İlk üyeliğe özel",
     image: "https://r.resimlink.com/_s87y.png",
     link: "https://grandpashabet2208.com/?btag=85489772_379736"
   },
   {
-    name: "Dinamobet",
+    name: "DİNAMOBET",
     bonus: "35₺ Deneme Bonusu",
     description: "Hızlı onay",
     image: "https://r.resimlink.com/WVztCFKS1n.png",
     link: "https://m.dinamobet846.com/?ref=mobileamp#/main"
   },
   {
-    name: "Betwoon",
+    name: "BETWOON",
     bonus: "45₺ Free Bonus",
     description: "7/24 destek",
     image: "https://r.resimlink.com/YrM_HZ-uiG.jpg",
     link: "https://betwoon716.com/?btag=61575515_344299"
   },
   {
-    name: "Favorisen",
+    name: "FAVORİSEN",
     bonus: "55₺ Deneme Bonusu",
     description: "Anında onay",
     image: "https://r.resimlink.com/Mq7eQGH.png",
     link: "https://m.656favorisen.com/tr/"
   },
   {
-    name: "Turboslot",
+    name: "TURBOSLOT",
     bonus: "40₺ Free Bonus",
     description: "Özel bonus",
     image: "https://r.resimlink.com/-ZjEB.jpg",
     link: "https://www.turboslot464.com/tr/casino/?btag=35941268_222575"
   },
   {
-    name: "Betgaranti",
+    name: "BETGARANTİ",
     bonus: "50₺ Deneme Bonusu",
     description: "Whatsapp destek",
     image: "https://r.resimlink.com/FwIkQ.jpg",
@@ -147,7 +153,7 @@ export default function Home() {
                   href={site.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg text-center text-sm font-medium transition-all duration-300"
+                  className="block w-full bg-violet-500/10 hover:bg-violet-500/20 text-white px-4 py-2 rounded-lg text-center text-sm font-medium transition-all duration-300 backdrop-blur-md border border-violet-500/20"
                 >
                   BONUS AL
                 </a>
