@@ -14,7 +14,7 @@ const bonusSites = [
   },
   {
     name: "Betist",
-    bonus: "50₺ Deneme Bonusu", 
+    bonus: "50₺ Deneme Bonusu",
     description: "SMS onayı sonrası",
     image: "https://r.resimlink.com/3r-5F.png",
     link: "https://betist1345.com/Register-1345"
@@ -23,7 +23,7 @@ const bonusSites = [
     name: "Royalbet",
     bonus: "25₺ Free Bonus",
     description: "Telefon onayı ile",
-    image: "https://r.resimlink.com/hufW_RxA-8XD.jpg", 
+    image: "https://r.resimlink.com/hufW_RxA-8XD.jpg",
     link: "https://m.royalbet606.com/?btag=1758679"
   },
   {
@@ -79,11 +79,11 @@ const bonusSites = [
 
 export default function Home() {
   useEffect(() => {
-    const loadSnowEffect = async () => {
+    const timer = setTimeout(async () => {
       try {
         const { default: Snowflakes } = await import('magic-snowflakes')
         new Snowflakes({
-          count: 50,
+          count: 30,
           speed: 1,
           rotation: true,
           color: '#fff',
@@ -92,13 +92,14 @@ export default function Home() {
       } catch (error) {
         console.error('Snow effect loading failed:', error)
       }
-    }
-    loadSnowEffect()
+    }, 1000)
+    
+    return () => clearTimeout(timer)
   }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white relative">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="relative z-10 text-center py-12"
@@ -128,16 +129,19 @@ export default function Home() {
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
               className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-green-500/30 border border-gray-700"
             >
               <div className="relative h-48 bg-white">
-  <img
-    src={site.image}
-    alt={`${site.name} Logo`}
-    className="w-full h-full object-contain p-4"
-  />
-</div>
+                <Image
+                  src={site.image}
+                  alt={`${site.name} Logo`}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-contain p-4"
+                  loading="lazy"
+                />
+              </div>
               
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-green-400 neon-text mb-3">{site.name}</h3>
