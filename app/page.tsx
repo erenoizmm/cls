@@ -153,7 +153,7 @@ export default function Home() {
                   href={site.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-violet-500/10 hover:bg-violet-500/20 text-white px-4 py-2 rounded-lg text-center text-sm font-medium transition-all duration-300 backdrop-blur-md border border-violet-500/20"
+                  className="block w-full bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg text-center text-sm font-medium transition-all duration-300"
                 >
                   BONUS AL
                 </a>
