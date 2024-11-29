@@ -12,7 +12,6 @@ export const bonusSites = [
     image: "https://r.resimlink.com/R-wcfhWlGI.jpg",
     link: "https://m.vipslot300.com/tr/"
   },
-  {
     
   {
     name: "ROYALBET",
