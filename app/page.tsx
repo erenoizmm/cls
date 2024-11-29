@@ -6,11 +6,11 @@ import { motion } from 'framer-motion'
 
 const bonusSites = [
   {
-    name: "VİPSLOT",
-    bonus: "30₺ Deneme Bonusu",
-    description: "Üyelik sonrası anında",
-    image: "https://r.resimlink.com/R-wcfhWlGI.jpg",
-    link: "https://m.vipslot300.com/tr/"
+    name: "FİXBET",
+    bonus: "555₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/do2yxkmEVcGD.jpg",
+    link: "https://fixbet240.com/?aff=1117"
   },
   {
     name: "XSLOT",
@@ -20,18 +20,18 @@ const bonusSites = [
     link: "https://605xslot.com/tr/"
   },
   {
-    name: "ROYALBET",
-    bonus: "25₺ Free Bonus",
-    description: "Telefon onayı ile",
-    image: "https://r.resimlink.com/hufW_RxA-8XD.jpg", 
-    link: "https://m.royalbet606.com/?btag=1758679"
+    name: "STARTZBET",
+    bonus: "750₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/tgyRj-UJLE.jpeg", 
+    link: "https://starzbet151.com/tr-tr/"
   },
   {
-    name: "BETBOX",
-    bonus: "40₺ Deneme Bonusu",
-    description: "Anında hesabında",
-    image: "https://r.resimlink.com/JsX6Ar0Vg.png",
-    link: "https://m.betbox2314.com/?btag=788067"
+    name: "MAXWİN",
+    bonus: "350₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/N85fPI.jpeg",
+    link: "https://maxwin428.com/?btag=3671_4253_4623626"
   },
   {
     name: "GRANDPASHA",
@@ -62,18 +62,18 @@ const bonusSites = [
     link: "https://otobet28.com/?ref=8LWYC2hDqA"
   },
   {
-    name: "TURBOSLOT",
-    bonus: "40₺ Free Bonus",
-    description: "Özel bonus",
-    image: "https://r.resimlink.com/-ZjEB.jpg",
-    link: "https://www.turboslot464.com/tr/casino/?btag=35941268_222575"
+    name: "MATADORBET",
+    bonus: "500₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/sAG9YMgoRCV.png",
+    link: "https://matadorbet741.com/?aff=719"
   },
   {
-    name: "BETGARANTİ",
-    bonus: "50₺ Deneme Bonusu",
-    description: "Whatsapp destek",
-    image: "https://r.resimlink.com/FwIkQ.jpg",
-    link: "https://www.betgaranti918.com/register?ref=143&cid=&clickid=&visitor_id="
+    name: "SPİNCO",
+    bonus: "500₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/9lsYRy.png",
+    link: "https://spinco65.com/?btag=78815276_356920"
   }
 ]
 
