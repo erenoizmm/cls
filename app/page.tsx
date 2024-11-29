@@ -6,28 +6,23 @@ import { motion } from 'framer-motion'
 
 const bonusSites = [
   {
-    name: "Vipslot",
-    bonus: "30₺ Deneme Bonusu",
+    name: "VİPSLOT",
+    bonus: "999 Adet Freespin",
     description: "Üyelik sonrası anında",
     image: "https://r.resimlink.com/R-wcfhWlGI.jpg",
     link: "https://m.vipslot300.com/tr/"
   },
   {
-    name: "Betist",
-    bonus: "50₺ Deneme Bonusu", 
-    description: "SMS onayı sonrası",
-    image: "https://r.resimlink.com/3r-5F.png",
-    link: "https://betist1345.com/Register-1345"
-  },
+    
   {
-    name: "Royalbet",
+    name: "ROYALBET",
     bonus: "25₺ Free Bonus",
     description: "Telefon onayı ile",
     image: "https://r.resimlink.com/hufW_RxA-8XD.jpg", 
     link: "https://m.royalbet606.com/?btag=1758679"
   },
   {
-    name: "Betbox",
+    name: "BETBOX",
     bonus: "40₺ Deneme Bonusu",
     description: "Anında hesabında",
     image: "https://r.resimlink.com/JsX6Ar0Vg.png",
