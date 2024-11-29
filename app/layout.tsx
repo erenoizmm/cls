@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'BONUS KRALI 🔱',
-  description: 'DENEME BONUSU VE FREESPİNLER',
+  description: '🤑',
 }
 
 export default function RootLayout({
