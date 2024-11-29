@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 13, 17, 23;
-  --background-end-rgb: 23, 27, 33;
-  --primary-color: #00ff87;
-  --secondary-color: #60efff;
-  --accent-color: #ff3366;
+  /* Refined color palette */
+  --foreground-rgb: 240, 240, 245;
+  --background-start-rgb: 17, 24, 39;
+  --background-end-rgb: 29, 41, 57;
+  
+  /* Softer, more sophisticated neon colors */
+  --primary-color: #00e6ae;
+  --secondary-color: #39b5e0;
+  --accent-color: #ff4d79;
+  
+  /* Additional accent colors for depth */
+  --accent-light: #6366f1;
+  --accent-dark: #8b5cf6;
 }
 
 body {
@@ -21,59 +27,84 @@ body {
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
   );
+  min-height: 100vh;
+  line-height: 1.6;
 }
 
+/* Neon Text Effect - More Subtle and Elegant */
 .neon-text {
   color: #fff;
   text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px var(--primary-color),
-    0 0 82px var(--primary-color),
-    0 0 92px var(--primary-color),
-    0 0 102px var(--primary-color),
-    0 0 151px var(--primary-color);
+    0 0 5px rgba(255,255,255,0.5),
+    0 0 10px var(--primary-color),
+    0 0 20px var(--primary-color),
+    0 0 40px var(--secondary-color);
+  transition: text-shadow 0.3s ease;
 }
 
+.neon-text:hover {
+  text-shadow:
+    0 0 7px rgba(255,255,255,0.7),
+    0 0 15px var(--primary-color),
+    0 0 25px var(--secondary-color),
+    0 0 50px var(--accent-color);
+}
+
+/* Gradient Text - More Dynamic */
 .gradient-text {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    45deg, 
+    var(--primary-color), 
+    var(--secondary-color), 
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: gradient 3s linear infinite;
+  background-size: 400% auto;
+  animation: gradient 5s ease infinite;
 }
 
-/* Smooth scrolling */
+/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) rgba(26,26,26,0.3);
 }
 
-/* Custom scrollbar */
+/* Custom Scrollbar - More Refined */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(26, 26, 26, 0.5);
-  backdrop-filter: blur(10px);
+  background: rgba(29, 41, 57, 0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  border-radius: 4px;
+  background: linear-gradient(
+    45deg, 
+    var(--primary-color), 
+    var(--secondary-color)
+  );
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    45deg, 
+    var(--secondary-color), 
+    var(--accent-color)
+  );
 }
 
 /* Animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes gradient {
@@ -82,16 +113,26 @@ html {
   100% { background-position: 0% 50%; }
 }
 
+/* Enhanced Hover Effects */
 .float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Hover effects */
 .hover-glow {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, filter;
 }
 
 .hover-glow:hover {
-  filter: drop-shadow(0 0 10px var(--primary-color));
-  transform: scale(1.02);
+  transform: scale(1.05);
+  filter: 
+    drop-shadow(0 0 12px var(--primary-color))
+    brightness(1.1);
+}
+
+/* Additional Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
