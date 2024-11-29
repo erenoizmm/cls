@@ -13,11 +13,11 @@ const bonusSites = [
     link: "https://m.vipslot300.com/tr/"
   },
   {
-    name: "BETİST",
-    bonus: "50₺ Deneme Bonusu", 
+    name: "XSLOT",
+    bonus: "500₺ Deneme Bonusu", 
     description: "SMS onayı sonrası",
-    image: "https://r.resimlink.com/3r-5F.png",
-    link: "https://betist1345.com/Register-1345"
+    image: "https://r.resimlink.com/Fnj6ku_.png",
+    link: "https://605xslot.com/tr/"
   },
   {
     name: "ROYALBET",
@@ -35,31 +35,31 @@ const bonusSites = [
   },
   {
     name: "GRANDPASHA",
-    bonus: "60₺ Hoşgeldin Bonusu",
+    bonus: "250₺ Deneme Bonusu",
     description: "İlk üyeliğe özel",
     image: "https://r.resimlink.com/_s87y.png",
-    link: "https://grandpashabet2208.com/?btag=85489772_379736"
+    link: "https://grandpashabet2208.com/"
   },
   {
-    name: "DİNAMOBET",
-    bonus: "35₺ Deneme Bonusu",
-    description: "Hızlı onay",
-    image: "https://r.resimlink.com/WVztCFKS1n.png",
-    link: "https://m.dinamobet846.com/?ref=mobileamp#/main"
+    name: "BETSİN",
+    bonus: "2500₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/mrcSiV.png",
+    link: "https://betsin109.com/tr/?btag=4692_5862_4621842"
   },
   {
-    name: "BETWOON",
-    bonus: "45₺ Free Bonus",
-    description: "7/24 destek",
-    image: "https://r.resimlink.com/YrM_HZ-uiG.jpg",
-    link: "https://betwoon716.com/?btag=61575515_344299"
+    name: "BETMATİK",
+    bonus: "500₺ DENEME BONUSU",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/4jvmBwD9GoHp.jpeg",
+    link: "https://betmatik0645.com/home"
   },
   {
-    name: "FAVORİSEN",
-    bonus: "55₺ Deneme Bonusu",
-    description: "Anında onay",
-    image: "https://r.resimlink.com/Mq7eQGH.png",
-    link: "https://m.656favorisen.com/tr/"
+    name: "OTOBET",
+    bonus: "800₺ Deneme Bonusu",
+    description: "İlk üyeliğe özel",
+    image: "https://r.resimlink.com/poBXW.jpeg",
+    link: "https://otobet28.com/?ref=8LWYC2hDqA"
   },
   {
     name: "TURBOSLOT",
