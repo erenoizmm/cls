@@ -1,175 +1,259 @@
-'use client'
+import React, { useState, useEffect } from 'react';
+import { 
+    FaVolumeUp, 
+    FaVolumeMute, 
+    FaReact, 
+    FaNodeJs, 
+    FaPython, 
+    FaFigma 
+} from 'react-icons/fa';
+import { SiTensorflow, SiVuedotjs } from 'react-icons/si';
 
-import { useEffect } from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+const ErenPortfolio: React.FC = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [snowflakes, setSnowflakes] = useState<JSX.Element[]>([]);
 
-const bonusSites = [
-  {
-    name: "FİXBET",
-    bonus: "555₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/do2yxkmEVcGD.jpg",
-    link: "https://fixbet240.com/?aff=1117"
-  },
-  {
-    name: "XSLOT",
-    bonus: "500₺ Deneme Bonusu", 
-    description: "SMS onayı sonrası",
-    image: "https://r.resimlink.com/Fnj6ku_.png",
-    link: "https://605xslot.com/tr/"
-  },
-  {
-    name: "STARTZBET",
-    bonus: "750₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/tgyRj-UJLE.jpeg", 
-    link: "https://starzbet151.com/tr-tr/"
-  },
-  {
-    name: "MAXWİN",
-    bonus: "350₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/N85fPI.jpeg",
-    link: "https://maxwin428.com/?btag=3671_4253_4623626"
-  },
-  {
-    name: "GRANDPASHA",
-    bonus: "250₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/_s87y.png",
-    link: "https://grandpashabet2208.com/"
-  },
-  {
-    name: "BETSİN",
-    bonus: "2500₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/mrcSiV.png",
-    link: "https://betsin109.com/tr/?btag=4692_5862_4621842"
-  },
-  {
-    name: "BETMATİK",
-    bonus: "500₺ DENEME BONUSU",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/4jvmBwD9GoHp.jpeg",
-    link: "https://betmatik0645.com/home"
-  },
-  {
-    name: "OTOBET",
-    bonus: "800₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/poBXW.jpeg",
-    link: "https://otobet28.com/?ref=8LWYC2hDqA"
-  },
-  {
-    name: "MATADORBET",
-    bonus: "500₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/sAG9YMgoRCV.png",
-    link: "https://matadorbet741.com/?aff=719"
-  },
-  {
-    name: "SPİNCO",
-    bonus: "500₺ Deneme Bonusu",
-    description: "İlk üyeliğe özel",
-    image: "https://r.resimlink.com/9lsYRy.png",
-    link: "https://spinco65.com/?btag=78815276_356920"
-  }
-]
-
-export default function Home() {
-  useEffect(() => {
-    const loadSnowEffect = async () => {
-      try {
-        const { default: Snowflakes } = await import('magic-snowflakes')
-        new Snowflakes({
-          count: 50,
-          speed: 0.5,
-          rotation: true,
-          color: '#ffffff10',
-          size: 3,
-          zIndex: 1
-        })
-      } catch (error) {
-        console.error('Snow effect loading failed:', error)
-      }
-    }
-    loadSnowEffect()
-  }, [])
-
-  return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-violet-900/10 to-black/30 pointer-events-none" />
-      
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 text-center py-8 md:py-12 backdrop-blur-sm"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-purple-600">
-          Deneme Bonusu Veren Siteler
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-400 mb-6">En Güncel ve Güvenilir Bonus Fırsatları</p>
-        
-        <a
-          href="https://t.me/BonusXY"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center bg-violet-500/10 hover:bg-violet-500/20 text-white px-5 py-2.5 rounded-lg transition-all duration-300 backdrop-blur-md border border-violet-500/20"
-        >
-          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.178.12.13.145.309.164.433-.001.061.018.181.002.294z"/>
-          </svg>
-          Telegram Destek
-        </a>
-      </motion.div>
-
-      <div className="container mx-auto px-4 py-6 md:py-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-          {bonusSites.map((site, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-md rounded-xl overflow-hidden hover:scale-102 transition-all duration-300 border border-white/10"
+    const createSnowflakes = () => {
+        const snowflakeCount = 50;
+        const newSnowflakes = Array.from({ length: snowflakeCount }, (_, i) => (
+            <div 
+                key={i} 
+                className="snowflake"
+                style={{
+                    left: `${Math.random() * 100}vw`,
+                    animationDuration: `${Math.random() * 3 + 2}s`,
+                    opacity: Math.random(),
+                    fontSize: `${Math.random() * 10 + 10}px`
+                }}
             >
-              <div className="relative h-40 bg-black/40">
-                <img
-                  src={site.image}
-                  alt={`${site.name} Logo`}
-                  className="w-full h-full object-contain p-4"
-                />
-              </div>
-              
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-violet-300 mb-2">{site.name}</h3>
-                <div className="bg-black/20 backdrop-blur-md rounded-lg p-3 mb-3">
-                  <p className="text-lg font-bold text-white">{site.bonus}</p>
-                  <p className="text-gray-300 text-sm mt-1">{site.description}</p>
-                </div>
-                
-                <a
-                  href={site.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-violet-500/10 hover:bg-violet-500/20 text-white px-4 py-2 rounded-lg text-center text-sm font-medium transition-all duration-300 backdrop-blur-md border border-violet-500/20"
-                >
-                  BONUS AL
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+                ❄
+            </div>
+        ));
+        setSnowflakes(newSnowflakes);
+    };
 
-      <footer className="bg-black/40 backdrop-blur-md py-4 relative z-10 mt-8 border-t border-white/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <p className="text-gray-400 text-sm">© 2024 Bonus Portal. Tüm hakları saklıdır.</p>
-          </div>
+    const toggleMusic = () => {
+        const audio = document.getElementById('bgMusic') as HTMLAudioElement;
+        if (audio) {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
+
+    useEffect(() => {
+        createSnowflakes();
+        const audio = document.getElementById('bgMusic') as HTMLAudioElement;
+        if (audio) {
+            audio.volume = 0.3;
+            audio.play().then(() => {
+                setIsPlaying(true);
+            }).catch(() => {
+                console.log('Müzik otomatik başlatılamadı. Lütfen butona tıklayın.');
+            });
+        }
+    }, []);
+
+    return (
+        <div className="bg-black text-white overflow-x-hidden font-poppins">
+            {/* Kar Efekti Container */}
+            <div id="snow-container" className="fixed inset-0 pointer-events-none z-10">
+                {snowflakes}
+            </div>
+
+            {/* Müzik Player */}
+            <div 
+                className="music-player fixed bottom-5 right-5 bg-white/10 p-4 rounded-full cursor-pointer z-50 backdrop-blur-lg border border-white/20 transition-all hover:scale-110" 
+                onClick={toggleMusic}
+            >
+                {isPlaying ? <FaVolumeUp className="text-white text-2xl" /> : <FaVolumeMute className="text-white text-2xl" />}
+            </div>
+
+            {/* Müzik */}
+            <audio id="bgMusic" loop>
+                <source src="https://files.catbox.moe/ukui4v.mp3" type="audio/mpeg" />
+            </audio>
+
+            {/* Header */}
+            <header className="fixed top-0 w-full bg-opacity-90 backdrop-blur-lg z-50">
+                <nav className="container mx-auto px-6 py-4">
+                    <div className="flex justify-between items-center">
+                        <div className="text-3xl font-bold">EREN ADIGÜZEL</div>
+                        <div className="hidden md:flex space-x-8">
+                            <a href="#home" className="nav-link">Ana Sayfa</a>
+                            <a href="#skills" className="nav-link">Yetenekler</a>
+                            <a href="#projects" className="nav-link">Projeler</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            {/* Main Content */}
+            <main className="container mx-auto px-6 pt-24">
+                {/* Hero Section */}
+                <section id="home" className="min-h-screen flex items-center">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h1 className="text-5xl font-bold mb-4">
+                                Merhaba, Ben Eren! 👋
+                            </h1>
+                            <p className="text-2xl mb-6 opacity-90">
+                                Full Stack Developer & UI/UX Designer
+                            </p>
+                            <div className="flex space-x-4">
+                                <a href="#projects" className="glass-btn">
+                                    Projelerimi Gör
+                                </a>
+                                <a href="#" className="glass-btn">
+                                    CV İndir
+                                </a>
+                            </div>
+                        </div>
+                        <div className="profile-container">
+                            <img 
+                                src="https://r.resimlink.com/Ww7tlvA1QBa.jpg" 
+                                alt="Eren Adıgüzel" 
+                                className="profile-image" 
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                {/* Skills Section */}
+                <section id="skills" className="py-24">
+                    <h2 className="text-4xl font-bold text-center mb-12">Yeteneklerim</h2>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* Frontend Skills */}
+                        <div className="project-card">
+                            <h3 className="text-2xl font-bold mb-6">Frontend</h3>
+                            <div className="space-y-6">
+                                <SkillBar 
+                                    name="React" 
+                                    percentage={90} 
+                                    icon={<FaReact className="text-blue-500" />} 
+                                />
+                                <SkillBar 
+                                    name="Vue.js" 
+                                    percentage={85} 
+                                    icon={<SiVuedotjs className="text-green-500" />} 
+                                />
+                            </div>
+                        </div>
+
+                        {/* Backend Skills */}
+                        <div className="project-card">
+                            <h3 className="text-2xl font-bold mb-6">Backend</h3>
+                            <div className="space-y-6">
+                                <SkillBar 
+                                    name="Node.js" 
+                                    percentage={88} 
+                                    icon={<FaNodeJs className="text-green-600" />} 
+                                />
+                                <SkillBar 
+                                    name="Python" 
+                                    percentage={82} 
+                                    icon={<FaPython className="text-yellow-500" />} 
+                                />
+                            </div>
+                        </div>
+
+                        {/* Design Skills */}
+                        <div className="project-card">
+                            <h3 className="text-2xl font-bold mb-6">Design</h3>
+                            <div className="space-y-6">
+                                <SkillBar 
+                                    name="UI/UX" 
+                                    percentage={92} 
+                                    icon={<FaFigma className="text-purple-500" />} 
+                                />
+                                <SkillBar 
+                                    name="Figma" 
+                                    percentage={85} 
+                                    icon={<FaFigma className="text-pink-500" />} 
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Projects Section */}
+                <section id="projects" className="py-24">
+                    <h2 className="text-4xl font-bold text-center mb-12">Projelerim</h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <ProjectCard 
+                            title="E-Ticaret Platformu" 
+                            description="Modern ve ölçeklenebilir e-ticaret çözümü" 
+                            technologies={[
+                                { name: 'React', icon: <FaReact className="text-blue-400" /> },
+                                { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> }
+                            ]} 
+                        />
+                        <ProjectCard 
+                            title="AI Chat Uygulaması" 
+                            description="Yapay zeka destekli sohbet platformu" 
+                            technologies={[
+                                { name: 'Python', icon: <FaPython className="text-yellow-500" /> },
+                                { name: 'TensorFlow', icon: <SiTensorflow className="text-orange-500" /> }
+                            ]} 
+                        />
+                    </div>
+                </section>
+            </main>
         </div>
-      </footer>
-    </div>
-  )
+    );
+};
+
+// Skill Bar Component
+interface SkillBarProps {
+    name: string;
+    percentage: number;
+    icon: React.ReactNode;
 }
+
+const SkillBar: React.FC<SkillBarProps> = ({ name, percentage, icon }) => (
+    <div>
+        <div className="flex justify-between items-center mb-2">
+            <div className="flex items-center space-x-2">
+                {icon}
+                <span>{name}</span>
+            </div>
+            <span>{percentage}%</span>
+        </div>
+        <div className="h-2 bg-white bg-opacity-10 rounded">
+            <div 
+                className="h-full bg-white rounded" 
+                style={{ width: `${percentage}%` }} 
+            />
+        </div>
+    </div>
+);
+
+// Project Card Component
+interface ProjectCardProps {
+    title: string;
+    description: string;
+    technologies: Array<{ name: string; icon: React.ReactNode }>;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technologies }) => (
+    <div className="project-card">
+        <h3 className="text-2xl font-bold mb-4">{title}</h3>
+        <p className="opacity-90 mb-4">{description}</p>
+        <div className="flex gap-2 items-center">
+            {technologies.map((tech, index) => (
+                <div 
+                    key={index} 
+                    className="glass-btn text-sm flex items-center space-x-2"
+                >
+                    {tech.icon}
+                    <span>{tech.name}</span>
+                </div>
+            ))}
+        </div>
+    </div>
+);
+
+export default ErenPortfolio;
